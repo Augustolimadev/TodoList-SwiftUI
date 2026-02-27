@@ -9,4 +9,7 @@ import Factory
 
 extension Container {
     
+    var appInfoStore: Factory<AppInfo> {
+        self { MainActor.assumeIsolated { AppInfo() }}.singleton
+    }
 }
