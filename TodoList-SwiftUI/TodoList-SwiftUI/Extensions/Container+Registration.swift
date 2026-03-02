@@ -12,4 +12,8 @@ extension Container {
     var appInfoStore: Factory<AppInfo> {
         self { MainActor.assumeIsolated { AppInfo() }}.singleton
     }
+    
+    var authStore: Factory<any AuthStoreProtocol> {
+        self { MainActor.assumeIsolated { AuthStore() }}.singleton
+    }
 }
