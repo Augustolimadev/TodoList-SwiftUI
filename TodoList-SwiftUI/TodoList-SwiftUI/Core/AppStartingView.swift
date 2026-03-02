@@ -9,15 +9,21 @@ import SwiftUI
 
 struct AppStartingView: View {
     
+    @StateObject private var viewModel: AppStartingViewModel = .init()
+    
     var body: some View {
         
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Group {
+            
+            switch viewModel.appState {
+            case .auth:
+                Text("Auth View")
+            case .app:
+                NavigationStack {
+                    Text("App")
+                }
+            }
+        }.animation(.spring, value: viewModel.appState)
     }
 }
 
