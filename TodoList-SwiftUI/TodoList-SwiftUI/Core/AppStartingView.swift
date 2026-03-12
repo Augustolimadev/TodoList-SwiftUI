@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Factory
 
 struct AppStartingView: View {
     
@@ -17,7 +18,7 @@ struct AppStartingView: View {
             
             switch viewModel.appState {
             case .auth:
-                Text("Auth View")
+                AuthView()
             case .app:
                 NavigationStack {
                     Text("App")

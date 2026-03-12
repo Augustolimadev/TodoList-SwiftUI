@@ -27,7 +27,7 @@ private extension AppStartingViewModel {
     func setSubscribers() {
         
         authStore.authUpdatePublisher
-            .receive(on: DispatchQueue.main)
+//            .receive(on: DispatchQueue.main) my classe is already in the MainThread
             .sink { [weak self] _ in
                 guard let self else { return }
                 updateAppState()
