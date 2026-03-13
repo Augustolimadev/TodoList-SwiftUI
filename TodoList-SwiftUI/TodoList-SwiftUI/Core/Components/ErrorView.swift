@@ -22,7 +22,7 @@ struct ErrorView: View {
             understandButtonView
         }
         .padding()
-        .background(Color.appTheme.cellBackground)
+        .background(.cellBackground)
         .cornerRadius(.cell)
         .frame(width: UIScreen.main.bounds.width / 1.2)
     }
@@ -38,7 +38,7 @@ private extension ErrorView {
         }
         .font(.title3)
         .fontWeight(.semibold)
-        .foregroundStyle(Color.appTheme.error)
+        .foregroundStyle(.error)
     }
     
     var messageView: some View {

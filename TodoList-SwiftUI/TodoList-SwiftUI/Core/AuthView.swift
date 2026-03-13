@@ -24,6 +24,8 @@ struct AuthView: View {
         .padding()
         .infinityFrame()
         .background(Color.appTheme.viewBackground)
+        .showError(item: $viewModel.error)
+        .showAlert(item: $viewModel.alert)
         .hideKeyboardOnTap()
     }
 }
@@ -34,7 +36,7 @@ private extension AuthView {
         Image(viewModel.currentAuthType.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(maxWidth: UIScreen.main.bounds.width / 1.3)
+            .frame(maxWidth: 600)
     }
     
     var headingView: some View {
